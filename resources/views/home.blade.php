@@ -21,7 +21,7 @@
 
     <div class="content">
         <div class="title m-b-md">
-            Home 111
+            Home 
         </div> 
 
         @foreach($people as $person)
@@ -36,6 +36,6 @@
 
 @section('footer')
 <script>
-alert(1);
+
 </script>
 @stop
