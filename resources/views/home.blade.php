@@ -21,12 +21,11 @@
 
     <div class="content">
         <div class="title m-b-md">
-            Home 
+            Saved successfully !!!
+            <a href="about">Return to form</a>
         </div> 
 
-        @foreach($people as $person)
-        <li>{{$person}}</li>
-        @endforeach
+        
 
     </div>
 </div>

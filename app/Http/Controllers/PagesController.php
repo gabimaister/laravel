@@ -20,15 +20,15 @@ class PagesController extends Controller {
             while ($y < $s) {
                 $r = array_rand($list, 1);
                 if ($y > 0) {
-                    if ($t1[$y - 1] == $list[$r]) {
+                    if (in_array($list[$r], $t1)) {
                         $t1[] = $list[$r];
                         $m++;
                         $y++;
+                    } else if ($m >= 1) {
+                        $t1[] = $list[$r];
+                        $y++;
                     } else {
-                        if ($m >= 1 || ($y == 0 && $m == 0)) {
-                            $t1[] = $list[$r];
-                            $y++;
-                        }
+                        continue;
                     }
                 } else {
                     $t1[] = $list[$r];
@@ -40,18 +40,14 @@ class PagesController extends Controller {
         return $c;
     }
 
+
     public function about() {
 
-         $list = array('red', 'green', 'blue', 'blue', 'green', 'silver', 'red', 'green','red', 'green', 'blue', 'orange', 'green', 'green', 'red', 'green');
-
-        $iphone = $this->color($list, 3);
-//        echo "<pre>";
-//        print_r($listx);
-//        echo "</pre>";
-
+        $list = array('red', 'green', 'blue', 'blue', 'green', 'silver', 'red', 'green', 'red', 'green', 'blue', 'orange', 'green', 'green', 'red', 'green');
+        $colors = $this->color($list, 3);
 //        $people = array(0 => "About user");
 //        $iphone = iphone::all();
-        return view('about', compact('iphone'));
+        return view('about', compact('colors'));
     }
 
 }

@@ -19,3 +19,6 @@
 Route::get('/', 'PagesController@home');
 Route::get('about', 'PagesController@about');
 Route::get('home', 'PagesController@about');
+Route::post('insert', 'insertController@insertValues');
+Route::get('insert', 'insertController@insertValues');
+
